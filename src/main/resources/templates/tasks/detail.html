@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Task Detail</title>
+    <link rel="stylesheet" href="/css/app.css">
+</head>
+<body>
+
+<div th:insert="~{fragment/header :: header}"></div>
+
+<div class="card">
+    <h2 th:text="${task.title}">Task Title</h2>
+    <p th:text="${task.description}">Task Description</p>
+    <p class="mt-1">
+        <a th:href="@{/tasks/list}"><- Back to List</a>
+    </p>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>New Task</title>
+    <link rel="stylesheet" href="/css/app.css">
+</head>
+<body>
+
+<div th:insert="~{fragment/header :: header}"></div>
+
+<div class="card">
+    <h2>Create New Task</h2>
+
+    <form th:action="@{/tasks}" th:object="${task}" method="post">
+        <label for="title">Title</label>
+        <input id="title" type="text" th:field="*{title}" placeholder="Title">
+        <p class="error" th:if="${#fields.hasErrors('title')}" th:errors="*{title}">Title error</p>
+        <label for="description">Description</label>
+        <textarea id="description" th:field="*{description}" placeholder="Description" rows="3"></textarea>
+        <p class="mt-1">
+            <button class="btn" type="submit">Create Task</button>
+        </p>
+    </form>
+    <p>
+    <a th:href="@{/tasks/list}"><- Back to List</a>
+    </p>
+</div>
+
+</body>
+</html>

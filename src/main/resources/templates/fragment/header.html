@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<body>
+
+    <header th:fragment="header">
+        <nav class="navbar">
+            <span class="navbar__brand">📋 Task Manager</span>
+            <a th:href="@{/tasks/list}" class="navbar__link">All Tasks</a>
+            <a th:href="@{/tasks/new}" class="navbar__link">+ New Task</a>
+        </nav>
+    </header>
+</body>
+</html>
